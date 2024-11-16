@@ -4,6 +4,6 @@ services:
     build:
       context: .
     container_name: app
-    command: ['/Recruit/docker/command.sh']
+    command: ['gunicorn', 'app.main:app', '--workers', '1', '--worker-class', 'uvicorn.workers.UvicornWorker', '--bind=0.0.0.0:8000']
     ports:
       - 7000:8000
