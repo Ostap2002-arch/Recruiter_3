@@ -1,0 +1,9 @@
+name: task_for_recruit
+services:
+  app:
+    build:
+      context: .
+    container_name: app
+    command: ['/Recruit/docker/command.sh']
+    ports:
+      - 7000:8000
